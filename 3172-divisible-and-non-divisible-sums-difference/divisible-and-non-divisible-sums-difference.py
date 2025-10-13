@@ -1,10 +1,5 @@
 class Solution(object):
     def differenceOfSums(self, n, m):
-        sum=0
-        sum1=0
-        for i in range(1,n+1):
-            if i%m!=0:
-                sum+=i
-            else:
-                sum1+=i
-        return sum-sum1
+        sum1 = sum([i for i in range(1, n + 1) if i % m != 0])
+        sum2 = sum([i for i in range(1, n + 1) if i % m == 0])
+        return sum1 - sum2
